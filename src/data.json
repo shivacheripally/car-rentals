@@ -1,26 +1,51 @@
 [
     {
-        "start": "HYD",
+        "start": "Hyderabad",
+        "end": "Delhi",
+        "price": 10000
+    },
+    {
+        "start": "Hyderabad",
+        "end": "Nalgonda",
+        "price": 3500
+    },
+    {
+        "start": "Hyderabad",
         "end": "DEL",
         "price": 5000
     },
     {
-        "start": "HYD",
+        "start": "Hyderabad",
         "end": "DEL",
         "price": 5000
     },
     {
-        "start": "HYD",
+        "start": "Hyderabad",
         "end": "DEL",
         "price": 5000
     },
     {
-        "start": "HYD",
+        "start": "Hyderabad",
+        "end": "Delhi",
+        "price": 10000
+    },
+    {
+        "start": "Hyderabad",
+        "end": "Nalgonda",
+        "price": 3500
+    },
+    {
+        "start": "Hyderabad",
         "end": "DEL",
         "price": 5000
     },
     {
-        "start": "HYD",
+        "start": "Hyderabad",
+        "end": "DEL",
+        "price": 5000
+    },
+    {
+        "start": "Hyderabad",
         "end": "DEL",
         "price": 5000
     }
