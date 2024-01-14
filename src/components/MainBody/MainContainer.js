@@ -1,17 +1,40 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import * as Styles from "./style";
 import data from '../../data.json';
 import Car from '../../images/sport-car.png'
 
-export default function MainConatainer({ trackRef, isScroll }) {
+export default function MainConatainer({ trackRef }) {
+    const [typedText, setTypedText] = useState('');
+    const originalText =
+        'Drrive the experience, travel the extraordinary. Your journey, our passion....';
+
+    useEffect(() => {
+        let currentIndex = 0;
+
+        const typingInterval = setInterval(() => {
+            setTypedText((prevText) => {
+                console.log(prevText);
+                return prevText + originalText[currentIndex];
+            });
+            currentIndex++;
+
+            if (currentIndex === originalText.length-1) {
+                clearInterval(typingInterval);
+            }
+        }, 80); // You can adjust the typing speed by changing the interval duration
+
+        return () => {
+            clearInterval(typingInterval);
+        };
+    }, []);
     return (
         <Styles.MainConatainer>
-            <Styles.ProfileDiv size="130px" showdiv={isScroll} ismargin="true">
-                <img src={Car} alt="Profile" width={100} height={100} />
+            <Styles.ProfileDiv showdiv={true} ref={trackRef} size="130px" ismargin="true">
+                {/* <img src={Car} alt="Profile" width={100} height={100} /> */}
             </Styles.ProfileDiv>
-            <Styles.HeadeTextContainer ref={trackRef}>
+            <Styles.HeadeTextContainer>
                 <h1>
-                    Drive the experience, travel the extraordinary. Your journey, our passion....
+                    {typedText}
                     <img src={Car} alt="sports-car" />_____
                 </h1>
             </Styles.HeadeTextContainer>

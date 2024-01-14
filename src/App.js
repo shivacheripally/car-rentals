@@ -7,28 +7,16 @@ function App() {
   const trackedDivRef = useRef();
     const [initialTop, setInitialTop] = useState(0);
     const [showNavDiv, setshowNavDiv] = useState(false);
-    const [showMainDiv, setShowMainDiv] = useState(true);
 
     const handleScroll = () => {
         const rect = trackedDivRef.current.getBoundingClientRect();
         const traveledDistance = initialTop - rect.top;
-        if(traveledDistance > -188){
-          setShowMainDiv(false);
+        if(traveledDistance >= 0){
           setshowNavDiv(true);
         }
         else {
-          setShowMainDiv(true);
           setshowNavDiv(false);
         }
-        if(traveledDistance > -7){
-          setShowMainDiv(false);
-          setshowNavDiv(true);
-        }
-        else {
-          setShowMainDiv(true);
-          setshowNavDiv(false);
-        }
-        console.log('Traveled distance:', traveledDistance);
     };
 
     useEffect(() => {
@@ -44,8 +32,8 @@ function App() {
 
   return (
     <Styles.FullPage>
-      <Navbar isScroll={showNavDiv}/>
-      <MainConatainer trackRef={trackedDivRef} isScroll={showMainDiv}/>
+      <Navbar showNavDiv={showNavDiv}/>
+      <MainConatainer trackRef={trackedDivRef} />
     </Styles.FullPage>
   );
 }

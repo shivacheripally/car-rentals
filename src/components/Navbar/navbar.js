@@ -1,11 +1,11 @@
 import React from "react";
 import * as Styles from '../MainBody/style';
 
-export default function Navbar({ isScroll }) {
+export default function Navbar({ showNavDiv }) {
     return (
-        <Styles.NavbarDiv>
+        <Styles.NavbarDiv showdiv={showNavDiv}>
             <Styles.InfoDiv>
-                <Styles.ProfileDiv size="80px" showdiv={isScroll}>
+                <Styles.ProfileDiv size="80px" showdiv={showNavDiv} showNavDiv={showNavDiv}>
                 </Styles.ProfileDiv>
                 <Styles.Info>
                     <b>Shiva Car Rentals And Tarvels</b>
