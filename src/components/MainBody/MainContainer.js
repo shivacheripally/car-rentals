@@ -12,10 +12,7 @@ export default function MainConatainer({ trackRef }) {
         let currentIndex = 0;
 
         const typingInterval = setInterval(() => {
-            setTypedText((prevText) => {
-                console.log(prevText);
-                return prevText + originalText[currentIndex];
-            });
+            setTypedText((prevText) => prevText + originalText[currentIndex]);
             currentIndex++;
 
             if (currentIndex === originalText.length-1) {
