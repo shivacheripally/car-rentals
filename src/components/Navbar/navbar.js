@@ -3,9 +3,9 @@ import * as Styles from '../MainBody/style';
 
 export default function Navbar({ showNavDiv }) {
     return (
-        <Styles.NavbarDiv showdiv={showNavDiv}>
+        <Styles.NavbarDiv showdiv={showNavDiv ? 'true' : ''}>
             <Styles.InfoDiv>
-                <Styles.ProfileDiv size="80px" showdiv={showNavDiv} showNavDiv={showNavDiv}>
+                <Styles.ProfileDiv size="80px" showdiv={showNavDiv ? 'true' : ''} shownavdiv={showNavDiv ? 'true' : 'false'}>
                 </Styles.ProfileDiv>
                 <Styles.Info>
                     <b>Shiva Car Rentals And Tarvels</b>

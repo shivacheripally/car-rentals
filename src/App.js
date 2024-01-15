@@ -6,16 +6,16 @@ import * as Styles from "./components/MainBody/style";
 function App() {
   const trackedDivRef = useRef();
     const [initialTop, setInitialTop] = useState(0);
-    const [showNavDiv, setshowNavDiv] = useState(false);
+    const [showNavDiv, setShowNavDiv] = useState(false);
 
     const handleScroll = () => {
         const rect = trackedDivRef.current.getBoundingClientRect();
         const traveledDistance = initialTop - rect.top;
         if(traveledDistance >= 0){
-          setshowNavDiv(true);
+          setShowNavDiv(true);
         }
         else {
-          setshowNavDiv(false);
+          setShowNavDiv(false);
         }
     };
 

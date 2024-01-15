@@ -26,7 +26,7 @@ export default function MainConatainer({ trackRef }) {
     }, []);
     return (
         <Styles.MainConatainer>
-            <Styles.ProfileDiv showdiv={true} ref={trackRef} size="130px" ismargin="true">
+            <Styles.ProfileDiv showdiv="true" ref={trackRef} size="130px" ismargin="true">
                 {/* <img src={Car} alt="Profile" width={100} height={100} /> */}
             </Styles.ProfileDiv>
             <Styles.HeadeTextContainer>

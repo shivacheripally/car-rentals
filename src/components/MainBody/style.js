@@ -74,8 +74,8 @@ export const ProfileDiv = styled.div`
     margin-bottom: ${props => props.ismargin ? '20px' : ''};
 
     @media (max-width: 375px){
-        width: ${props => props.showNavDiv ? "60px" : ""};
-        height: ${props => props.showNavDiv ? "60px" : ""};
+        width: ${props => props.shownavdiv ? "60px" : ""};
+        height: ${props => props.shownavdiv ? "60px" : ""};
     }
 `
 
