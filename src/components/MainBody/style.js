@@ -73,6 +73,11 @@ export const ProfileDiv = styled.div`
     margin-top: ${props => props.ismargin ? '120px' : ''};
     margin-bottom: ${props => props.ismargin ? '20px' : ''};
 
+    img{
+        border-radius: 100%;
+        transform: rotate(-20deg);
+    }
+
     @media (max-width: 375px){
         width: ${props => props.shownavdiv ? "60px" : ""};
         height: ${props => props.shownavdiv ? "60px" : ""};
@@ -116,6 +121,16 @@ export const HeadeTextContainer = styled.div`
             height: 45px;
         }
     }
+
+    img {
+    transition: transform 3s ease; /* 3 seconds duration with ease timing function */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+img.initial {
+    transform: translateX(-100%); /* Start position outside the left side of the container */
+}
+
 `
 
 export const PriceHead = styled.div`
@@ -144,21 +159,38 @@ export const PriceHead = styled.div`
 
 export const PriceCard = styled.div`
     display: flex;
+    flex-direction: column;
     width: 80%;
-    height: 41px;
     padding: 2px 10px;
     align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
-    background: ${props => props.setbg % 2 !== 0 ? "#EEDBDB" : "#FFF"} ;
-    margin-top: ${props => props.setbg === 0 ? '20px' : '10px'};
-
+    text-align: center;
     p{
-        color: #000;
+        color: red;
         font-family: Inter;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    span{
+        color: black;
+        font-size: 10px;
+    }
+`
+
+export const CarImagesDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        margin: 10px 0px;
+        width: 95%;
     }
 `
