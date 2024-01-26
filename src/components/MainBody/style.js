@@ -62,6 +62,16 @@ export const Contact = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    span:nth-child(2), a {
+        text-decoration: none;
+        color: #4F33FF;
+        font-weight: bold;
+    }
+
+    span:nth-child(2):hover{
+        cursor: pointer;
+    }
 `
 
 export const ProfileDiv = styled.div`
@@ -119,18 +129,11 @@ export const HeadeTextContainer = styled.div`
             position: absolute;
             width: 50px;
             height: 45px;
+            left: 350px;
+            transform: ${props => props.carAnim ? 'translate(-205px)' : ''};
+            transition: transform 1s ease;
         }
     }
-
-    img {
-    transition: transform 3s ease; /* 3 seconds duration with ease timing function */
-    max-width: 100%; /* Ensure the image doesn't exceed its container */
-}
-
-img.initial {
-    transform: translateX(-100%); /* Start position outside the left side of the container */
-}
-
 `
 
 export const PriceHead = styled.div`
@@ -179,7 +182,7 @@ export const PriceCard = styled.div`
         flex-direction: column;
     }
     span{
-        color: black;
+        color: #616063;
         font-size: 10px;
     }
 `

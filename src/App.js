@@ -7,7 +7,14 @@ function App() {
   const trackedDivRef = useRef();
   const [initialTop, setInitialTop] = useState(0);
   const [showNavDiv, setShowNavDiv] = useState(false);
+  const targetRef = useRef(null);
 
+  const handleTargetRef = () => {
+    console.log('first')
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   const handleScroll = useCallback(() => {
     const rect = trackedDivRef.current.getBoundingClientRect();
     const traveledDistance = initialTop - rect.top;
@@ -33,8 +40,8 @@ function App() {
 
   return (
     <Styles.FullPage>
-      <Navbar showNavDiv={showNavDiv} />
-      <MainConatainer trackRef={trackedDivRef} />
+      <Navbar showNavDiv={showNavDiv} handleTargetRef={handleTargetRef} />
+      <MainConatainer trackRef={trackedDivRef} targetRef={targetRef} />
     </Styles.FullPage>
   );
 }
